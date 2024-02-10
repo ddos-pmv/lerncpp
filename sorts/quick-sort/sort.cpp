@@ -1,6 +1,6 @@
 #include <iostream>
 #include "../genarr.h"
-
+#include "../timer.h"
 int sort(int arr[], int l, int r){
     int x = arr[r];
 
@@ -36,16 +36,13 @@ void  recursive_function(int arr[], int l, int r){
 }
     
 int main(){
-    const int size = 10;
-    int* arr = init_arr(size, 0, 50);
-    
-    for(int i =0; i<size; i++)std::cout<<arr[i]<<"\n";
-    std::cout<<"\n\n\n\n";
 
+    Timer t;
+    const int size = 1000;
+    int* arr = init_arr(size, 0, 100);
+    
     recursive_function(arr,0, size-1);
      
-    for(int i =0; i<size; i++)std::cout<<arr[i]<<"\n";
-
     delete[] arr;
 
     return 0;

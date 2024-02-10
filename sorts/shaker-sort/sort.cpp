@@ -1,9 +1,10 @@
 #include <iostream>
 #include "../genarr.h"
-
+#include "../timer.h"
 int main(){
-    const int size = 20;
-    int *arr = init_arr(size,0, 30);
+    Timer t;
+    const int size = 1000;
+    int *arr = init_arr(size,0, 100);
     
     int right = size -1 ; 
     int left = 0;
@@ -26,8 +27,6 @@ int main(){
         }
         left+=1;
     }
-
-    for(int i = 0; i<size; i++) std::cout<<arr[i]<<"\n";
 
     return 0;
 }

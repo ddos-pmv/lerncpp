@@ -1,9 +1,10 @@
 #include <iostream>
 #include "../genarr.h"
-
+#include "../timer.h"
 int main(){
-    const int size = 20;
-    int* arr = init_arr(size, 0, 40);
+    Timer t;
+    const int size = 1000;
+    int* arr = init_arr(size, 0, 100);
     int step = size - 1;
 
     while(step>=1){
@@ -19,8 +20,7 @@ int main(){
         step /= 1.247; 
     }
 
-    for(int i = 0; i<size; i++) std::cout<<arr[i]<<"\n";
-
+    delete[]arr;
     
 
 }

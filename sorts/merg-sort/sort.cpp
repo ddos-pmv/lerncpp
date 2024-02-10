@@ -1,53 +1,41 @@
 #include <iostream>
 #include "../genarr.h"
+#include "../timer.h"
 #include <vector>
 
-void mergeSort(int * a, int l, int r){
-    if(r- l<2) return;
-    else if(r - l==2){
-        if(a[l] > a[l+1]){
-            int tmp = a[l];
-            a[l] = a[l+1];
-            a[l+1] = tmp;
-        }
+using namespace std;
+void MergeSortImpl(vector<int>& values, vector<int>& buffer, int l, int r) {
+  if (l < r) {
+    int m = (l + r) / 2;
+    MergeSortImpl(values, buffer, l, m);
+    MergeSortImpl(values, buffer, m + 1, r);
+
+    int k = l;
+    for (int i = l, j = m + 1; i <= m || j <= r; ) {
+      if (j > r || (i <= m && values[i] < values[j])) {
+        buffer[k] = values[i];
+        ++i;
+      } else {
+        buffer[k] = values[j];
+        ++j;
+      }
+      ++k;
     }
-
-    mergeSort(a, l, (l+r)/2);
-    mergeSort(a, (r+l)/2, r);
-
-    std::vector<int> b;
-    int b1 = l;
-    int e1 = (l+r)/2;
-    int b2 = e1;
-
-    while(b.size()<r-l){
-        if(b1>=e1 || (b2<r && a[b2]<a[b1])){
-            b.push_back(a[b2]);
-            b2++;
-        }
-        else{
-            b.push_back(a[b1]);
-            b1++;
-        }
+    for (int i = l; i <= r; ++i) {
+      values[i] = buffer[i];
     }
-
-    for(size_t i = l; i<r;i++)a[i] = b[i-l];
-
-
+  }
 }
 
-int main(){
-    const int size = 20;
+int main() {
+    Timer t;
+    int size = 1000;
+    int * myVec= init_arr(size, 0,100);
+    vector<int> values(myVec, myVec + size);
+  if (!values.empty()) {
+    vector<int> buffer(values.size());
+    MergeSortImpl(values, buffer, 0, values.size() - 1);
+  }
 
-    int * arr = init_arr(size,0, 33);
-
-    mergeSort(arr,0,size);
-
-
-    for(size_t i = 0; i<size; i++) std::cout<<arr[i]<<"\n";
-
-    delete[] arr;
-
-
-    return 0;
+  return 0;
 }

@@ -1,11 +1,12 @@
 #include <iostream>
 #include "../genarr.h"
 
+#include "../timer.h"
 
 int main(){
-
-    const int size = 25;
-    int *arr = init_arr(size, 0, 50);
+    Timer t;
+    const int size = 1000;
+    int *arr = init_arr(size, 0, 100);
 
     for(int i = 1; i<size; i++){
        int tmp = arr[i];
@@ -16,8 +17,6 @@ int main(){
        }
        arr[j] = tmp;
     }
-
-    for(int i = 0; i<size; i++) std::cout<<arr[i]<<"\n";
 
     delete[] arr;
 
