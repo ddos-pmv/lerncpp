@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/SIMPLE_CHAT.dir/src/main.cpp.o CMakeFiles/SIMPLE_CHAT.dir/src/Server.cpp.o CMakeFiles/SIMPLE_CHAT.dir/src/ClientHandler.cpp.o -o SIMPLE_CHAT 
