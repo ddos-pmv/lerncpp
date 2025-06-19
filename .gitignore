@@ -1,6 +1,6 @@
 .git
 .ssh
-.shh.pub
+.ssh.pub
 .vscode
 build
 xprinter
