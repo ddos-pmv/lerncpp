@@ -1,1 +1,0 @@
-/usr/bin/c++ -rdynamic CMakeFiles/SIMPLE_CLIENT.dir/src/Client.cpp.o -o SIMPLE_CLIENT 

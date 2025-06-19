@@ -1,4 +1,0 @@
-/home/sergey/workcpp/networkProgramming/simpleChat/build/CMakeFiles/SIMPLE_CHAT.dir
-/home/sergey/workcpp/networkProgramming/simpleChat/build/CMakeFiles/SIMPLE_CLIENT.dir
-/home/sergey/workcpp/networkProgramming/simpleChat/build/CMakeFiles/edit_cache.dir
-/home/sergey/workcpp/networkProgramming/simpleChat/build/CMakeFiles/rebuild_cache.dir
